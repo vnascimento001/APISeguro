@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Seguro API</title>
+
+
+    <style>
+        html, body {
+            font-size: 1.15rem;
+            color: white;
+            background: linear-gradient(270deg, rgba(112,206,238,1) 9%, rgba(57,147,93,1) 88%);
+        }
+
+        .center{
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h2{
+            margin-left: 1rem;
+        }
+
+        button {
+            width: 300px;
+            margin: 5px; /* or whatever you like */
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+        a:hover {
+            color: inherit;
+            text-decoration: none
+        }
+    </style>
+
+</head>
+<body>
+        <div>
+            <h2><a href="#">SeguroAPI</a></h2>
+        </div>
+        <div class="center">
+            <a href="/api/cadastro"><button type="button" class="btn btn-success"> Calcular seguro  </button></a>
+            <a href="/api/reprocessar"><button type="button" class="btn btn-success">Reprocessar seguro</button></a>
+        </div>
+</body>
+</html>
