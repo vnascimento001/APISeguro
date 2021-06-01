@@ -20,13 +20,13 @@ public class ResultadoController {
     {this.repository = repository;}
 
     @RequestMapping(value = "/calculos/{id}", method = RequestMethod.GET)
-    public Calculo getCalculo(@PathVariable("id") Calculo id){
+    public Calculo getCalculo(@PathVariable("id")@Valid Calculo id){
         repository.calc(id);
         return repository.findById(id.getId()).get();
     }
 
     @RequestMapping(value = "/reprocessar/{id}", method = RequestMethod.GET)
-    public Calculo getCalculore(@PathVariable("id") Calculo id){
+    public Calculo getCalculore(@PathVariable("id")@Valid Calculo id){
         repository.calc(id);
         return repository.findById(id.getId()).get();
     }

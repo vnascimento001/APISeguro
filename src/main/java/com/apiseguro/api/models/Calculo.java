@@ -44,12 +44,15 @@ public class Calculo implements Serializable {
 
     @NotNull(message = "Parcelas em branco")
     @JsonProperty(value = "Quantidade parcelas")
+    @Min(value = 1)
+    @Max(value = 12)
     private int parcelas;
 
 
     @JsonIgnore
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @NotNull
+    @Past
     private LocalDate data;
 
     @Transient
@@ -58,8 +61,6 @@ public class Calculo implements Serializable {
     @Transient
     @JsonProperty(value = "Valor parcela")
     private double valorparcela;
-
-
 
     public int getId() {
         return id;
@@ -93,14 +94,6 @@ public class Calculo implements Serializable {
         this.sexo = sexo;
     }
 
-    public LocalDate getData() {
-        return data;
-    }
-
-    public void setData(LocalDate data) {
-        this.data = data;
-    }
-
     public String getVeiculo() {
         return veiculo;
     }
@@ -125,6 +118,14 @@ public class Calculo implements Serializable {
         this.parcelas = parcelas;
     }
 
+    public LocalDate getData() {
+        return data;
+    }
+
+    public void setData(LocalDate data) {
+        this.data = data;
+    }
+
     public double getValortotal() {
         return valortotal;
     }
@@ -140,6 +141,5 @@ public class Calculo implements Serializable {
     public void setValorparcela(double valorparcela) {
         this.valorparcela = valorparcela;
     }
-
 
 }

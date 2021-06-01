@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.Objects;
 
 @Repository
 public interface ResultadoRepository extends JpaRepository<Calculo, Integer> {
@@ -15,7 +16,7 @@ public interface ResultadoRepository extends JpaRepository<Calculo, Integer> {
         double base = (calculo.getValor() * 0.03);
 
         double taxam = 0;
-        if (calculo.getSexo().equals("M")){
+        if (Objects.equals(calculo.getSexo(), "M")){
             taxam =  base * 0.1;
         }
 
@@ -53,8 +54,5 @@ public interface ResultadoRepository extends JpaRepository<Calculo, Integer> {
 
         calculo.setValorparcela(calculo.getValortotal() / calculo.getParcelas());
     }
-
-
-
-    }
+}
 
